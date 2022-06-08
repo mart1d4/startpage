@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:wght@700&display=swap');
 
 
-:root {
-    --border-radius: .8vh;
-}
+:root {--border-radius: .5vh;}
 
 
 * {
@@ -11,10 +9,8 @@
     padding: 0;
     user-select: none;
     transition: .3s ease-in-out;
-}
-*:hover {
-    transition: .3s ease-in-out;
-}
+} *:hover {transition: .3s ease-in-out;}
+
 
 html,
 body {
@@ -38,12 +34,12 @@ main {
 }
 
 main > * {
-    padding: 5%;
+    padding: 3vh;
 }
 
 
 #Buttons {
-    padding: 10%;
+    padding: 7vh 11vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -63,12 +59,10 @@ main > * {
     background-color: #292E39;
     box-shadow: 0 .7vh 1vh rgba(0, 0, 0, 0.35);
 }
-.Button:hover {
-    transform: translateY(-1vh);
-    background-color: #5E81AC;
-}
+.Button:hover {transform: translateY(-.5vh);}
 .Button:hover svg {
-    stroke: #242933;
+    stroke: #5E81AC;
+    transition: none;
 }
 
 
@@ -76,26 +70,28 @@ main > * {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5%;
+    gap: 3vh;
 }
 
 
 #Cards > * {
-    width: 45%;
-    height: 95%;
+    height: 90%;
+    width: 100%;
     border-radius: var(--border-radius);
     background-color: #292E39;
     box-shadow: 0 .7vh 1vh rgba(0, 0, 0, 0.35);
     display: flex;
     flex-direction: column;
-    padding: 4%;
+    padding: 5%;
     gap: 5%;
-} #Cards > *:hover {transform: translateY(-1vh);}
+} #Cards > *:hover {transform: translateY(-.5vh);}
 
 #Cards > * > * {
-    justify-self: center;
-    text-align: center;
-    padding: 5% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16%;
+    width: 100%;
     color: #ECEFF4;
     text-decoration: none;
     border-radius: var(--border-radius);
@@ -104,8 +100,8 @@ main > * {
 }
 
 #Cards > * > a:hover {
-    background-color: #5E81AC;
-    color: #242933;
+    background-color: #242933;
+    color: #5E81AC;
 }
 
 
@@ -121,8 +117,7 @@ main > * {
     font-family: 'Rubik', sans-serif;
     font-size: 12vh;
 } #Date {font-size: 8vh;}
-#Time:hover,
-#Date:hover {color: #5E81AC;}
+#Time:hover, #Date:hover {color: #5E81AC;}
 
 #Greeting {font-size: 3vh;}
 
@@ -152,60 +147,44 @@ svg {
 
 
 
-@media screen and (max-width: 992px) {
-
-    html,
-    body {
-        width: 100%;
-        height: 100%;
-    }
+@media (max-aspect-ratio: 1 / .7) {
 
     main {
+        height: 70%;
         width: 95%;
-        height: 90%;
+    }
+
+    svg {height: 2.5vh;}
+
+}
+
+
+@media (max-aspect-ratio: 1 / 1) {
+
+    main {
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
 
-    main > * {
-        padding: 5%;
-        height: 25%;
-        width: 90%;
-    }
-
-    #Time {font-size: 9vh;}
-    #Date {font-size: 7vh;}
-    #Greeting {font-size: 2.5vh;}
-    #Weather {font-size: 2.5vh;}
-    #Buttons {width: 45%; gap: 1.5vh;}
-    .Button {height:100%;}
-    #Cards > * {width: 25%;}
-    #Cards > * > * {font-size: 1.5vh;}
-    svg {height: 2vh;}
-
-    #weatherIcon img {height: 4vh;}
-
-    .Button:hover {transform: translateY(-.5vh);}
-    #Cards > *:hover {transform: translateY(-.5vh);}
-
-    :root {
-        --border-radius: .5vh;
-    }
-}
-
-
-
-/*@media screen and (max-width: 1700px) and (max-height: 1200px) {
-
-    main {
-        height: 100%;
-        width: 100%;
-    }
-
     #Buttons {
-        padding: 30% 15%;
+        width: 40vh;
+        height: 20%;
     }
 
-}*/
+    #Cards {
+        width: 40vh;
+        height: 25%;
+    }
+
+    #Time {font-size: 8vh;}
+    #Greeting {font-size: 2vh;}
+    #Date {font-size: 6vh;}
+    #Weather {font-size: 2vh;}
+    #Weather img {height: 4vh;}
+    #Cards > * > * {font-size: 1.5vh;}
+
+}
