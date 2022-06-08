@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:wght@700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    transition: .3s ease-in-out;
+}
+*:hover {
+    transition: .3s ease-in-out;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #242933;
+    color: #ECEFF4;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+main {
+    width: 80%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+main > * {
+    padding: 5%;
+}
+
+
+#Buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+
+.Button {
+    height: 75%;
+    aspect-ratio: 3 / 2.3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vh;
+    background-color: #292E39;
+    box-shadow: 0 .7vh 1vh rgba(0, 0, 0, 0.35);
+}
+.Button:hover {
+    transform: translateY(-1vh);
+    background-color: #5E81AC;
+}
+.Button:hover svg {
+    stroke: #242933;
+}
+
+
+#Cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+#Cards > * {
+    width: 35%;
+    height: 95%;
+    border-radius: 1vh;
+    background-color: #292E39;
+    box-shadow: 0 .7vh 1vh rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+    gap: 5%;
+}
+#Cards > *:hover {
+    transform: translateY(-1vh);
+}
+
+#Cards > * > * {
+    justify-self: center;
+    text-align: center;
+    padding: 5% 10%;
+    color: #ECEFF4;
+    text-decoration: none;
+    border-radius: 1vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.2vh;
+}
+
+#Cards > * > a:hover {
+    background-color: #5E81AC;
+    color: #242933;
+}
+
+
+#TimexGreeting,
+#DatexWeather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#Time,
+#Date {
+    font-family: 'Rubik', sans-serif;
+    font-size: 12vh;
+} #Date {font-size: 8vh;}
+#Time:hover,
+#Date:hover {
+    color: #5E81AC;
+}
+
+#Greeting {
+    font-size: 3vh;
+}
+
+#Weather {
+    font-size: 3vh;
+    display: flex;
+    align-items: center;
+    gap: 3vh;
+}
+
+svg {
+    stroke-width: 2;
+    stroke: #ECEFF4;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    height: 3.5vh;
+}
