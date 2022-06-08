@@ -6,8 +6,9 @@ function capitalize(string) {
         string = string.split('');
         let index = string.indexOf(' ') + 1;
         string[index] = string[index].toUpperCase();
+        return string.join('');
     }
-    return string.join('');
+    return string;
 }
 
 
@@ -36,7 +37,7 @@ function displayClock() {
     time.textContent = currentTime;      // Prints the time (hh, mm, ss)
     setTimeout(displayClock, 1000);      // Update every second (1000ms)
 
-    if (hour >= 23 || hour < 5) greet = 'Go to Sleep martin!';
+    if (hour >= 23 || hour < 5) greet = 'Go to sleep martin!';
     else if (hour >= 6 && hour < 12) greet = 'Good morning martin!';
     else if (hour >= 12 && hour < 17) greet = 'Good afternoon, martin.';
     else greet = 'Good evening, martin.';
@@ -67,8 +68,8 @@ function displayWeather() {
 			weather.iconId = data.weather[0].icon;
 		})
 		.then(function() {
-			icon.innerHTML   = `<img src='assets/icons/${weather.iconId}.png'/ height='40vh'>`;
-	        temp.textContent = `${weather.temperature.value.toFixed(0)} °C`;
+			icon.innerHTML   = `<img src='assets/icons/${weather.iconId}.png'/>`;
+	        temp.textContent = `${weather.temperature.value.toFixed(0)}°C`;
 	        desc.textContent = capitalize(weather.description);
 		});
     
