@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik:wght@700&display=swap');
 
 
-:root {--border-radius: .5vh;}
+:root {--border-radius: .3rem;}
 
 
 * {
@@ -34,18 +34,18 @@ main {
 }
 
 main > * {
-    padding: 3vh;
+    padding: 3rem;
 }
 
 
 #Buttons {
-    padding: 7vh 11vh;
+    padding: 9vh 7vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
     justify-items: center;
-    gap: 3vh;
+    gap: 1.5rem;
 }
 
 
@@ -57,9 +57,9 @@ main > * {
     justify-content: center;
     border-radius: var(--border-radius);
     background-color: #292E39;
-    box-shadow: 0 .7vh 1vh rgba(0, 0, 0, 0.35);
+    box-shadow: 0 .7rem 1rem rgba(0, 0, 0, 0.35);
 }
-.Button:hover {transform: translateY(-.5vh);}
+.Button:hover {transform: translateY(-.2rem);}
 .Button:hover svg {
     stroke: #5E81AC;
     transition: none;
@@ -70,21 +70,21 @@ main > * {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3vh;
+    gap: 2rem;
 }
 
 
 #Cards > * {
-    height: 90%;
-    width: 100%;
+    height: 95%;
+    width: 38%;
     border-radius: var(--border-radius);
     background-color: #292E39;
-    box-shadow: 0 .7vh 1vh rgba(0, 0, 0, 0.35);
+    box-shadow: 0 .7rem 1rem rgba(0, 0, 0, 0.35);
     display: flex;
     flex-direction: column;
-    padding: 5%;
+    padding: 2%;
     gap: 5%;
-} #Cards > *:hover {transform: translateY(-.5vh);}
+} #Cards > *:hover {transform: translateY(-.2rem);}
 
 #Cards > * > * {
     display: flex;
@@ -96,7 +96,7 @@ main > * {
     text-decoration: none;
     border-radius: var(--border-radius);
     font-family: 'Roboto', sans-serif;
-    font-size: 2.2vh;
+    font-size: 1.3rem;
 }
 
 #Cards > * > a:hover {
@@ -115,17 +115,17 @@ main > * {
 #Time,
 #Date {
     font-family: 'Rubik', sans-serif;
-    font-size: 12vh;
-} #Date {font-size: 8vh;}
+    font-size: 8rem;
+} #Date {font-size: 4rem;}
 #Time:hover, #Date:hover {color: #5E81AC;}
 
-#Greeting {font-size: 3vh;}
+#Greeting {font-size: 2rem;}
 
 #Weather {
-    font-size: 3vh;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
-    gap: 1vh;
+    gap: 1rem;
 }
 
 svg {
@@ -134,14 +134,14 @@ svg {
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    height: 3.5vh;
+    height: 2rem;
 }
 
 #weatherIcon {
     display: flex;
     align-items: center;
     justify-content: center;
-} #weatherIcon img {height: 6vh;}
+} #weatherIcon img {height: 3rem;}
 
 
 
@@ -154,7 +154,7 @@ svg {
         width: 95%;
     }
 
-    svg {height: 2.5vh;}
+    svg {height: 2rem;}
 
 }
 
@@ -180,11 +180,12 @@ svg {
         height: 25%;
     }
 
-    #Time {font-size: 8vh;}
+    /*#Time {font-size: 8vh;}
     #Greeting {font-size: 2vh;}
     #Date {font-size: 6vh;}
     #Weather {font-size: 2vh;}
     #Weather img {height: 4vh;}
-    #Cards > * > * {font-size: 1.5vh;}
+    #Cards > * > * {font-size: 1.5vh;}*/
+
 
 }

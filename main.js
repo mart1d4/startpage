@@ -29,7 +29,7 @@ function displayClock() {
     hours           = hours % 12;
     hours           = (hours) ? hours : 12;
     minutes         = minutes < 10 ? '0' + minutes : minutes;
-    let currentTime = hours + ':' + minutes + ':' + ('0' + currentDate.getSeconds()).slice(-2);
+    let currentTime = ('0' + String(hours).slice(-2)) + ':' + minutes + ':' + ('0' + currentDate.getSeconds()).slice(-2);
     let hour        = currentDate.getHours();
 
 
