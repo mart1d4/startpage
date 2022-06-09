@@ -117,7 +117,7 @@ main > * {
 #Date {
     font-family: 'Rubik', sans-serif;
     font-size: 6rem;
-} #Date {font-size: 4rem;}
+} #Date {font-size: 3rem;}
 #Time:hover, #Date:hover {color: #5E81AC;}
 
 #Greeting {font-size: 1.5rem;}

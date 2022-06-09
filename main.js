@@ -23,6 +23,7 @@ function displayClock() {
 
     const DATE   = document.querySelector('#Date');
     const TIME   = document.querySelector('#Time');
+    const GREET  = document.querySelector('#Greeting');
 
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
                     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',];
@@ -34,16 +35,16 @@ function displayClock() {
     let seconds  = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds();
     let time     = hours + ':' + minutes + ':' + seconds;
 
-    DATE.textContent = day;              // Prints the date (mm, dd)
-    TIME.textContent = time;             // Prints the time (hh, mm, ss)
-    setTimeout(displayClock, 1000);      // Update every second (1000ms)
+    DATE.textContent = day;
+    TIME.textContent = time;
 
-    if (hours > 5  && hours < 12) greet = 'Good morning martin!';
-    if (hours > 11 && hours < 18) greet = 'Good afternoon, martin.';
-    if (hours > 17 && hours < 23) greet = 'Good evening, martin.';
-    if (hours > 22 && hours < 5 ) greet = 'Go to sleep martin!';
+    let hour = date.getHours();
+    if (hour > 5  && hour < 12) GREET.textContent = 'Good morning martin!';
+    if (hour > 11 && hour < 18) GREET.textContent = 'Good afternoon, martin.';
+    if (hour > 17 && hour < 23) GREET.textContent = 'Good evening, martin.';
+    if (hour > 22 || hour < 5 ) GREET.textContent = 'Go to sleep martin!';
 
-    document.querySelector('#Greeting').textContent = greet;
+    setTimeout(displayClock, 1000);
 
 }
 
