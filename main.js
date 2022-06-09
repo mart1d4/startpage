@@ -12,36 +12,36 @@ function capitalize(string) {
 }
 
 
+function toAMPM(hour) {
+    hour = hour % 12;
+    hour = (hour) ? hour : 12;
+    return hour;
+}
+
+
 function displayClock() {
 
-    const date = document.querySelector('#Date');
-    const time = document.querySelector('#Time');
+    const DATE   = document.querySelector('#Date');
+    const TIME   = document.querySelector('#Time');
 
-    const monthNames = [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
-    ];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',];
 
-    let currentDate = new Date();
-    let currentDay  = `${monthNames[currentDate.getMonth()]} ${currentDate.getDate()}`;
-    let hours       = currentDate.getHours();
-    let minutes     = currentDate.getMinutes();
-    hours           = hours % 12;
-    hours           = (hours) ? hours : 12;
-    hours           = (hours < 10) ? '0' + hours : hours;
-    minutes         = (minutes < 10) ? '0' + minutes : minutes;
-    let currentTime = hours + ':' + minutes + ':' + ('0' + currentDate.getSeconds()).slice(-2);
-    let hour        = currentDate.getHours();
+    let date     = new Date();
+    let day      = months[date.getMonth()] + ' ' + date.getDate();
+    let hours    = (toAMPM(date.getHours()) < 10) ? '0' + toAMPM(date.getHours()) : toAMPM(date.getHours());
+    let minutes  = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes();
+    let seconds  = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds();
+    let time     = hours + ':' + minutes + ':' + seconds;
 
-
-    date.textContent = currentDay;       // Prints the date (day, mm, dd)
-    time.textContent = currentTime;      // Prints the time (hh, mm, ss)
+    DATE.textContent = day;              // Prints the date (mm, dd)
+    TIME.textContent = time;             // Prints the time (hh, mm, ss)
     setTimeout(displayClock, 1000);      // Update every second (1000ms)
 
-    if (hour >= 23 || hour < 5) greet = 'Go to sleep martin!';
-    else if (hour >= 6 && hour < 12) greet = 'Good morning martin!';
-    else if (hour >= 12 && hour < 17) greet = 'Good afternoon, martin.';
-    else greet = 'Good evening, martin.';
+    if (hours > 5  && hours < 12) greet = 'Good morning martin!';
+    if (hours > 11 && hours < 18) greet = 'Good afternoon, martin.';
+    if (hours > 17 && hours < 23) greet = 'Good evening, martin.';
+    if (hours > 22 && hours < 5 ) greet = 'Go to sleep martin!';
 
     document.querySelector('#Greeting').textContent = greet;
 
