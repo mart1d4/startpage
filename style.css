@@ -26,32 +26,34 @@ body {
 }
 
 main {
-    width: 80%;
-    height: 90%;
+    width: 65rem;
+    height: 35rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
 }
 
 main > * {
-    padding: 3rem;
+    width: 32.5rem;
+    height: 17.5rem;
 }
 
 
 #Buttons {
-    padding: 9vh 7vw;
+    width: 25.5rem;
+    height: 14.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
     justify-items: center;
-    gap: 1.5rem;
+    padding: 1.5rem 3.5rem;
 }
 
 
 .Button {
-    height: 100%;
-    width: 100%;
+    height: 85%;
+    width: 85%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,34 +71,33 @@ main > * {
 #Cards {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-around;
 }
 
 
 #Cards > * {
-    height: 95%;
-    width: 38%;
+    height: 100%;
+    width: 45%;
     border-radius: var(--border-radius);
     background-color: #292E39;
     box-shadow: 0 .7rem 1rem rgba(0, 0, 0, 0.35);
     display: flex;
     flex-direction: column;
-    padding: 2%;
-    gap: 5%;
+    justify-content: space-around;
+    align-items: center;
 } #Cards > *:hover {transform: translateY(-.2rem);}
 
 #Cards > * > * {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 16%;
-    width: 100%;
+    height: 15%;
+    width: 95%;
     color: #ECEFF4;
     text-decoration: none;
     border-radius: var(--border-radius);
     font-family: 'Roboto', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 #Cards > * > a:hover {
@@ -115,14 +116,14 @@ main > * {
 #Time,
 #Date {
     font-family: 'Rubik', sans-serif;
-    font-size: 8rem;
+    font-size: 6rem;
 } #Date {font-size: 4rem;}
 #Time:hover, #Date:hover {color: #5E81AC;}
 
-#Greeting {font-size: 2rem;}
+#Greeting {font-size: 1.5rem;}
 
 #Weather {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -134,7 +135,7 @@ svg {
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    height: 2rem;
+    height: 1.6rem;
 }
 
 #weatherIcon {
