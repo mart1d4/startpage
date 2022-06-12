@@ -80,5 +80,20 @@ function displayWeather() {
 }
 
 
+function switchMode(mode) {
+    if (mode == 'Card') {
+        document.querySelector('#SwitchCard').style.display = 'none';
+        document.querySelector('#SwitchBtn').style.display = 'inherit';
+        document.querySelector('#Buttons').style.display = 'none';
+        document.querySelector('#Cards').style.display = 'flex';
+    } else {
+        document.querySelector('#SwitchCard').style.display = 'inherit';
+        document.querySelector('#SwitchBtn').style.display = 'none';
+        document.querySelector('#Buttons').style.display = 'inherit';
+        document.querySelector('#Cards').style.display = 'none';
+    }
+}
+
+
 displayClock();
 displayWeather();
