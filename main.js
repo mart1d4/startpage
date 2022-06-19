@@ -55,25 +55,16 @@ function displayWeather() {
     const temp = document.querySelector('#weatherValue');
     const desc = document.querySelector('#weatherDesc');
 
-    const weather = {};
-    weather.temperature = {};
-
     let api = `https://api.openweathermap.org/data/2.5/weather?lat=48.884529&lon=2.317020&lang='en'&appid=327ea8bfc466d4fd42a9e720c737b17f`;
-	fetch(api)
-		.then(function(response) {
-			let data = response.json();
-			return data;
-		})
-		.then(function(data) {
-			weather.temperature.value = Math.floor(data.main.temp - 273.15);
-			weather.description = data.weather[0].description;
-			weather.iconId = data.weather[0].icon;
-		})
-		.then(function() {
-			icon.innerHTML   = `<img src='assets/icons/${weather.iconId}.png'/>`;
-	        temp.textContent = `${weather.temperature.value.toFixed(0)}°C`;
-	        desc.textContent = capitalize(weather.description);
-		});
+    async function getWeather() {
+        const response = await fetch(api);
+        const data = await response.json();
+        icon.innerHTML   = `<img src='assets/icons/${data.weather[0].icon}.png'/>`;
+	    temp.textContent = `${Math.floor(data.main.temp - 273.15).toFixed(0)}°C`;
+	    desc.textContent = capitalize(data.weather[0].description);
+    }
+
+    getWeather();
     
     setTimeout(displayWeather, 60000);
 

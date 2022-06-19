@@ -124,10 +124,7 @@ main > * {
 } #Date {font-size: 3rem;}
 #Time:hover, #Date:hover {color: #5E81AC;}
 
-#Time {
-    width: 80%;
-    padding-left: 0 10%;
-}
+#Time {width: 80%;}
 
 #Greeting {font-size: 1.5rem;}
 
