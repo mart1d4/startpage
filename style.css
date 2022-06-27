@@ -4,15 +4,17 @@
 :root {
     --border-radius: .3rem;
     --font-size: 20px;
+    --bg-primary: #171717;
+    --bg-secondary: #232323;
+    --fg-primary: #FFFFFF;
+    --accent: #60A5FA;
 }
 
 
 * {
     margin: 0;
     padding: 0;
-    user-select: none;
-    transition: .3s ease-in-out;
-} *:hover {transition: .2s ease-in-out;}
+}
 
 
 html,
@@ -22,8 +24,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #242933;
-    color: #ECEFF4;
+    background-color: var(--bg-primary);
+    color: var(--fg-primary);
     font-family: 'Roboto', sans-serif;
     font-size: var(--font-size);
 }
@@ -61,13 +63,15 @@ main > * {
     align-items: center;
     justify-content: center;
     border-radius: var(--border-radius);
-    background-color: #292E39;
+    background-color: var(--bg-secondary);
     box-shadow: 0 .7rem 1rem rgba(0, 0, 0, 0.35);
+    transition: transform .2s ease-in-out;
 }
-.Button:hover {transform: translateY(-.2rem);}
+.Button:hover {
+    transform: translateY(-.2rem);
+}
 .Button:hover svg {
-    stroke: #5E81AC;
-    transition: none;
+    stroke: var(--accent);
 }
 
 
@@ -83,13 +87,13 @@ main > * {
     height: 100%;
     width: 42%;
     border-radius: var(--border-radius);
-    background-color: #292E39;
+    background-color: var(--bg-secondary);
     box-shadow: 0 .7rem 1rem rgba(0, 0, 0, 0.35);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-} #Cards > *:hover {transform: translateY(-.2rem);}
+}
 
 #Cards > * > * {
     display: flex;
@@ -97,16 +101,17 @@ main > * {
     justify-content: center;
     height: 16%;
     width: 95%;
-    color: #ECEFF4;
+    color: var(--fg-primary);
     text-decoration: none;
     border-radius: var(--border-radius);
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
+    transition: all .2s ease-in-out;
 }
 
 #Cards > * > a:hover {
-    background-color: #242933;
-    color: #5E81AC;
+    background: var(--bg-primary);
+    color: var(--accent);
 }
 
 
@@ -122,7 +127,7 @@ main > * {
     font-family: 'Rubik', sans-serif;
     font-size: 6rem;
 } #Date {font-size: 3rem;}
-#Time:hover, #Date:hover {color: #5E81AC;}
+#Time:hover, #Date:hover {cursor: default;}
 
 #Time {width: 80%;}
 
@@ -137,7 +142,7 @@ main > * {
 
 svg {
     stroke-width: 2;
-    stroke: #ECEFF4;
+    stroke: var(--fg-primary);
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
